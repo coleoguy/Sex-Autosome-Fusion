@@ -86,7 +86,7 @@ The two chromosomes could both be autosomes, they could both be sex chromosomes,
 We will denote our three possibilities, AA-fusion, SS-fusion, and SA-fusion as events $AA$, $SS$, and $SA$, respectively. 
 We are interested in the third possibility, SA-fusion. Unfortunately, this proves difficult to calculate directly. We can avoid this using the complement rule. 
 We define the probability of SA-fusion as
-\begin{equation}
+\begin{equation} \label{eq1}
 P(SA)=1-P(AA)-P(SS)
 \end{equation}
 We now calculate $P(AA)$ and $P(SS)$ using counting.
@@ -111,12 +111,12 @@ We will revisit this later under multi-XY sex chromosome systems.
 
 Therefore, we find the probability of an SA-fusion in an XY sex chromosome system, $P(SA_{XY})$, is:
 
-\begin{equation}
+\begin{equation} \label{eq2}
     P(SA_{XY}) = 1 - P(AA) - P(SS) = 1 - \frac{D_a}{D} \cdot \frac{D_a - 2}{D - 2}
 \end{equation}
 
 \subsection{X0 System}
-Equation 2 does not extend to an XO system because of differences in the sex chromosome complement of males and females. 
+Equation \ref{eq2} does not extend to an XO system because of differences in the sex chromosome complement of males and females. 
 In this system, males have a single X chromosome with no homolog, and females have a pair of homologous X chromosomes. 
 The lack of a homolog in males causes males and females to have different diploid numbers and requires us to consider males and females separately. 
 
@@ -124,95 +124,86 @@ We begin with females. Following the same logic as above, we calculate the proba
 $P(A_1) = \frac{D_a}{D_d}$, where $D_d$ is the diploid number in dams. 
 The probability that the second chromosome involved in the fusion is also an autosome can be found as the ratio of the number of autosomes available to be 'chosen', $D_a - 2$, the number of autosomes minus the autosome already chosen to fuse and its homolog, and the total number of chromosomes available, $D_d - 2$. 
 Therefore, $P(A_2) = \frac{D_a - 2}{D_d - 2}$. 
-After employing independence and equation 1, we find a very familiar equation for the probability of a SA-fusion in X0 females (equation 3 first line). 
-The male case follows similarly and we find a nearly identical expression (equation 3 second line).
-\begin{equation}
-    \begin{array}{rcl} P(SA_d) & = & 1 - \frac{D_a}{D_d} \cdot \frac{D_a - 2}{D_d - 2} \\ P(SA_s) & = & 1 - \frac{D_a}{D_s} \cdot \frac{D_a - 2}{D_s - 2}\end{array}
+After employing independence and equation \ref{eq2}, we find a very familiar equation for the probability of a SA-fusion in X0 females $P(SA_d)$ yielding. 
+\begin{equation} \label{eq3}
+    P(SA_d) =  1 - \frac{D_a}{D_d} \cdot \frac{D_a - 2}{D_d - 2}
 \end{equation}
-
-
-Note, $D_d$ is replaced by $D_s$, the diploid number of sires, in the denominator of the second equation.
+The male case $P(SA_s)$ follows similarly. and we find a nearly identical expression.
+The only modification required is to replace $D_d$ with $D_s$, the diploid number of sires, in the denominator.
+\begin{equation} \label{eq4}
+    P(SA_s) = 1 - \frac{D_a}{D_s} \cdot \frac{D_a - 2}{D_s - 2}
+\end{equation}
 As in the XY system, we can ignore the possibility of an SS-fusion in both sexes, because every sex chromosome in an individual are homologous in an X0 sex determination system.
 
 Because we assume that males and females make equal contributions to possible fusions, we calculate the probability of a SA-fusion as the average of the probabilities that such a fusion occurs in either sex.
-
-    \begin{equation}
-     \begin{array}{rcl}
-        P(SA_{X0,XY}) & = & \frac{1}{2} (1 - \frac{D_a}{D_d} \cdot \frac{D_a - 2}{D_d - 2} + 1 - \frac{D_a}{D_s} \cdot \frac{D_a - 2}{D_s - 2}) \\
-        & = & 1 - \frac{D_a  (D_a - 2)}{2 D_d  (D_d - 2)} - \frac{D_a  (D_a - 2)}{2 D_s  (D_s - 2)}
-            \end{array}
+    \begin{equation} \label{eq5}
+        P(SA_{X0,XY}) = 1 - \frac{D_a  (D_a - 2)}{2 D_d  (D_d - 2)} - \frac{D_a  (D_a - 2)}{2 D_s  (D_s - 2)}
     \end{equation}
-Note that in an XY system (where $D_s = D_d$), the two fractions will combine and 3 will simplify into 2. 
+Note that in an XY system (where $D_s = D_d$), the two fractions will combine and equation \ref{eq5} will simplify into equation \ref{eq2}. 
 Hence, this result is accurate for both X0 and XY sex chromosome systems.
  
 \subsection{XXY System}
-So far we have been able to ignore the possibility of SS-fusions. 
-But, this is not the case in multi XY systems.
+Recall in equation \ref{eq1}, we stated that $P(SA) = 1-P(AA)-P(SS)$ in the preceding cases we have been able to ignore the last term, $P(SS)$.
+This is not the case in multi-XY systems.
 For example, in the XXY system females have four X chromosomes (two homologous pairs) and males have two non-homologous X chromosomes and a Y chromosome.
-To calculate the probability of a SA-fusion in an XXY system, we must account for the possibility of SS-fusions. 
-
+So, in order to modify equations \ref{eq5} for an XXY system, we must find an expression for the probability of SS-fusion in both males and females. 
 In an XXY system females and males have different diploid numbers, so we begin again by considering the male and female cases separately. 
-Recall 3, the expressions for $P(SA_d) \mbox{, } P(SA_s)$ in an X0 system. 
-In each of 3's formulas represent a case of equation 1 ($1-P(AA)-P(SS)$) where we have been able to ignore the last term, $P(SS)$.
-So, in order to modify equations 3 for an XXY system, we must simply find an expression for the probability of SS-fusion in both males and females. 
 
 Females in an XXY system will have four X chromosomes, two homologous pairs, and $D_a$ autosomes. 
 We calculate the probability of a SS-fusion as the product of the probability of a sex chromosome being 'chosen' to fuse first, $P(S_1)$, and the probability of a sex chromosome being 'chosen' to fuse second, $P(S_2)$. 
 Proceeding by counting, we calculate the probability that a sex chromosome is 'chosen' first,
-$P(S_1) = \frac{X_d}{D_d} $, where $X_d $ is the number of X chromosomes present in dams. 
+$P(S_1) = \frac{2X_s}{D_d} $, where $X_s$ is the number of X chromosomes present in sires. 
+The use of $2X_s$ in females takes advantage of the fact females always have twice as many X chromosomes as males and avoids the use of another variable for the number of X chromosomes in females.
 The probability that the second chromosome involved in the fusion is also a sex chromosome can be found in the same manner. 
-The number of sex chromosomes available to be 'chosen' is $X_d - 2 $, the number of X chromosomes minus the one already chosen to fuse and its homolog, and the total number of chromosomes available is $D_d - 2$. 
-It follows $P(S_2) = \frac{X_d-2}{D_d-2}$. 
-Therefore, we find the probability of a SS-fusion in females is  $P(SS_d) = \frac{X_d}{D_d} \cdot \frac{X_d-2}{D_d-2}$.
-Appending this result to the first of equations 3, we find the probability of a SA-fusion in females is:
-    \begin{equation}
-        P(SA_d) = 1 - \frac{D_a}{D_d} \cdot \frac{D_a - 2}{D_d - 2} -  \frac{X_d}{D_d} \cdot \frac{X_d-2}{D_d-2} = 1 - \frac{D_a(D_a-2) + X_d(X_d-2)}{D_d(D_d-2)}
+The number of sex chromosomes available to be 'chosen' is $2X_s - 2 $, the number of X chromosomes minus the one already chosen to fuse and its homolog, and the total number of chromosomes available is $D_d - 2$. 
+It follows $P(S_2) = \frac{2X_s-2}{D_d-2}$. 
+Therefore, we find the probability of a SS-fusion in females is  $P(SS_d) = \frac{2X_a}{D_d} \cdot \frac{2X_s-2}{D_d-2}$.
+Appending this result to the first of equations \ref{eq3}, we find the probability of a SA-fusion in females is:
+    \begin{equation} \label{eq6}
+        P(SA_d) = 1 - \frac{D_a}{D_d} \cdot \frac{D_a - 2}{D_d - 2} -  \frac{2X_s}{D_d} \cdot \frac{2X_s-2}{D_d-2} = 1 - \frac{D_a(D_a-2) + 2X_s(2X_s-2)}{D_d(D_d-2)}
     \end{equation}
 
-XXY males have two non-homologous X chromosomes which are both homologs to a single Y chromosome, and $D_a$ autosomes. 
-We assume that the Y chromosome cannot fuse with either of the X's, because of our assumption with regard to fusions of homologous chromosomes. %HB we should mention this impact in conclusion.
+XXY males have two non-homologous X chromosomes a single Y chromosome, and $D_a$ autosomes. 
+We assume that the Y chromosome cannot fuse with either of the X's, because of our assumption with regard to fusions of homologous chromosomes. 
 The only possible SS-fusion is between the two non-homologous X chromosomes. 
-So, we calculate the probability of a sex sex chromosome fusion as the product of the probability to 'choose' the first X chromosome, $P(X_1) $, and the probability of 'choosing' the second X chromosome, $P(X_2) $. 
-We calculate $P(X_1) $ as the ratio of X chromosomes to the total number of chromosomes, $P(X_1) = \frac{X_s}{D_s} $.
-We calculate $P(X_2) $ as the ratio of the number of remaining X chromosomes ($X_s - 1 $ only the single X chosen must be accounted for, its homolog is a Y and does not need to be taken away from $X_s $) and the total number of chromosomes available to fuse ($D_s - 2 $, every chromosome except for the X that was picked and its homologous Y).  
-Therefore, $P(X_2) = \frac{X_s - 1}{D_s - 2} $ and the probability of a sex sex chromosome fusion in XXY males is $P(SS_s) = \frac{X_s}{D_s} \cdot \frac{X_s - 1}{D_s - 2}$.
-Appending this result to the latter expression in 3 yields:
-    \begin{equation}
+So, we calculate the probability of a sex sex chromosome fusion as the product of the probability to 'choose' the first X chromosome, $P(X_1)$, and the probability of 'choosing' the second X chromosome, $P(X_2)$. 
+We calculate $P(X_1)$ as the ratio of X chromosomes to the total number of chromosomes, $P(X_1) = \frac{X_s}{D_s}$.
+We calculate $P(X_2)$ as the ratio of the number of remaining X chromosomes ($X_s - 1$ only the single X chosen must be accounted for since it has no homologous X that could be chosen) and the total number of chromosomes available to fuse ($D_s - 2 $, every chromosome except for the X that was picked and the Y).  
+Therefore, $P(X_2) = \frac{X_s - 1}{D_s - 2}$ and the probability of a sex sex chromosome fusion in XXY males is $P(SS_s) = \frac{X_s}{D_s} \cdot \frac{X_s - 1}{D_s - 2}$.
+Appending this result to equation \ref{eq4}:
+    \begin{equation} \label{eq7}
         P(SA_s) = 1 - \frac{D_a}{D_s} \cdot \frac{D_a - 2}{D_s - 2} - \frac{X_s}{D_s} \cdot \frac{X_s - 1}{D_s - 2} = 1 - \frac{D_a(D_a - 2) + X_s(X_s-1)}{D_s(D_s-2)}
     \end{equation}
 To formulate our general expression for XXY, XY and XO systems we average the contribution from males and females and simplify:
-\begin{equation}
-\begin{array}{rcl}
-P(SA_{XXY, XY, XO}) & = & \frac{1}{2} (1 - \frac{D_a(D_a-2) + X_d(X_d-2)}{D_d(D_d-2)} + 1 - \frac{D_a(D_a - 2) + X_s(X_s-1)}{D_s(D_s-2)}) \\
-& = & 1 -\frac{D_a(D_a-2) + X_d(X_d-2)}{2D_d(D_d-2)} - \frac{D_a(D_a - 2) + X_s(X_s-1)}{2D_s(D_s-2)}
-\end{array}
+\begin{equation} \label{eq8}
+P(SA_{XXY, XY, XO}) = 1 -\frac{D_a(D_a-2) + 2X_s(2X_s-2)}{2D_d(D_d-2)} - \frac{D_a(D_a - 2) + X_s(X_s-1)}{2D_s(D_s-2)}
 \end{equation}
 
 
 \subsection{XYY System}
-In an XYY system, males have a single X chromosome which is homologous to two non-homologous Y chromosomes, while females have a single pair of homologous X chromosomes.
+In an XYY system, males have a single X chromosome and two non-homologous Y chromosomes, while females have a single pair of homologous X chromosomes.
 In females, there is no possibility of a SS-fusion, because the only sex chromosomes that exist are an X and its homolog. 
-Recall 5, note that when $X_d = 2 $, the second term in the numerator, equals 0. 
-Therefore 5 is appropriate for XYY systems as well.
+Recall that in equation \ref{eq8} the probability of both chromosomes in a fusion being sex chromosomes in a female is captured by the expression $2X_s(2X_s-2)$, in an XYY systems $X_s=2$ and this expression will equal 0. 
+Therefore equation \ref{eq8} is appropriate for females in an XYY systems as well.
 However, in males an SS-fusion between the two Y chromosomes is possible.
-We ignore the possibility of either of the Y chromosomes fusing with the X.
-So, the probability of a SS-fusion in males is equivalent to the probability of 'choosing' one Y and then the other. 
-Proceeding by counting we find: $ P(SS_s) = P(Y_1) \cdot P(Y_2) = \frac{Y}{D_s} \cdot \frac{Y - 1}{D_s - 2}$. 
-Appending this to equation 3 we get:
-    \begin{equation}
+As mentioned previously we again ignore the possibility of either of the Y chromosomes fusing with the X.
+The probability of a SS-fusion in males is equivalent to the probability of 'choosing' one Y and then the other. 
+Proceeding by counting we find: $ P(SS_s) = P(Y_1) \cdot P(Y_2) = \frac{Y}{D_s} \cdot \frac{Y - 1}{D_s - 2}$ where $Y$ is the number of Y chromosomes in males.
+Appending this to equation \ref{eq3} we get:
+    \begin{equation} \label{eq9}
         P(SA_s) = 1 - \frac{D_a}{D_s} \cdot \frac{D_a - 2}{D_s - 2} - \frac{Y}{D_s} \cdot \frac{Y - 1}{D_s - 2} = 1 - \frac{D_a(D_a - 2) + Y(Y - 1)}{D_s(D_s - 2)}
     \end{equation}
-The difference between equations 6 and 8 is $X_s$ changes to $Y$. 
+The difference between equations \ref{eq7} and \ref{eq9} is $X_s$ changes to $Y$. 
 Therefore, to generate an expression that is applicable to both XXY and XYY systems we take the maximum value among $X_s$ and $Y$:
-    \begin{equation}
-        P(SA) = 1 -\frac{D_a(D_a-2) + X_d(X_d-2)}{2D_d(D_d-2)} - \frac{D_a(D_a - 2) + max(X_s,Y)(max(X_s,Y)-1)}{2D_s(D_s-2)}
+    \begin{equation} \label{eq10}
+        P(SA) = 1 -\frac{D_a(D_a-2) + 2X_s(2X_s-2)}{2D_d(D_d-2)} - \frac{D_a(D_a - 2) + max(X_s,Y)(max(X_s,Y)-1)}{2D_s(D_s-2)}
     \end{equation}
 
 This formulation is applicable to XO, XY, multi-XY sex chromosome systems.
 With regard to multi-XY systems, the current formulation would not apply in the rare case where there are multiples of both the X and the Y chromosome.
-It is quite possible that the sexes may make unequal contributions to the fusions entering a species, in this case equation 9 can be modified by the addition of a term $\mu_d$, representing the proportion of fusions that occur in females: 
-    \begin{equation}
-        P(SA) = 1 -\mu_d\frac{D_a(D_a-2) + X_d(X_d-2)}{2D_d(D_d-2)} - (1-\mu_d)\frac{D_a(D_a - 2) + max(X_s,Y)(max(X_s,Y)-1)}{2D_s(D_s-2)}
+It is quite possible that the sexes may make unequal contributions to the fusions entering a species, in this case equation \ref{eq10} can be modified by eliminating the averaging among sexes and the addition of a term $\mu_d$, representing the proportion of fusions that occur in females: 
+    \begin{equation} \label{eq11}
+        P(SA) = 1 -\mu_d\frac{D_a(D_a-2) + 2X_s(2X_s-2)}{D_d(D_d-2)} - (1-\mu_d)\frac{D_a(D_a - 2) + max(X_s,Y)(max(X_s,Y)-1)}{D_s(D_s-2)}
     \end{equation}
 
 \section{Results and Discussion}
@@ -231,9 +222,8 @@ Among 14,147 surveyed invertebrates just 0.4\% posses these systems, and the vas
 These sex chromosome systems are equally rare in mammals where they are restricted to two species in Monotremata \citep{ashman2014tree}.
 
 \begin{wrapfigure}{r}{0.5\textwidth} %this figure will be at the right
-\caption{Probability of a random fusion joining a sex chromosome and autosome. On the vertical axis we plot the proportion of all fusions that are SA-fusions while on the horizontal axis we plot the diploid autosome count. Each sex chromosome system is indicated by a unique color.}
     \centering
-    \includegraphics[width=0.5\textwidth]{autosome.num.pdf}
+    \includegraphics[width=0.45\textwidth]{autosome.num.pdf}
 \caption{Probability of a random fusion joining a sex chromosome and autosome. On the vertical axis we plot the proportion of all fusions that are SA-fusions while on the horizontal axis we plot the diploid autosome count. Each sex chromosome system is indicated by a unique color.}
 \end{wrapfigure}
 
@@ -244,9 +234,11 @@ In systems with XXY sex determination, the case is even more extreme. The probab
 
 One of the challenges to understanding whether there is an excess of SA-fusions is the relative rarity of these large scale genome rearrangements \citep{blackmon2019}. %and some others
 We envision using this equation to calculate the expected proportion of all fusions that are SA-fusions across a clade.
-We can do this by leveraging stochastic mappings to extract the proportion of time that lineages in a clade spend with each possible chromosome number and sex chromosome system (CITE huelsenbeck, phytools).
-An additional advantage of this approach is that it naturally extends to marginalize over a collection of phylogenetic trees sampled from a posterior distribution and even allows us to incorporate uncertainty in observed tip states (CITE something that does this).
-In figure 2 we illustrate the way use an example tree and tip data to illustrate how we envision users estimating a clade wide expectation for the proportion of fusions that are SA-fusions.
+We can do this by leveraging stochastic mappings to extract the proportion of time that lineages in a clade spend with each possible chromosome number and sex chromosome system \citep{huelsenbeck2003, revell2012}.
+These proportions can then be used in conjunction with equation \ref{eq10} to generate a weighted sum that describes the expected proportion of all observed fusions that should be SA-fusions (figure 2).
+An additional advantage of this approach is that it naturally extends to marginalize over a collection of phylogenetic trees sampled from a posterior distribution.
+
+
 
 
 
