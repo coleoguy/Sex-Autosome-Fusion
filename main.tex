@@ -15,39 +15,32 @@
 
 \begin{center}
 \textbf{The Probability of Sex Autosome Fusions}
-\end{center}
 
-\vfill
-\noindent
-\textit{Running title:} SA-fusions
-
-\vfill
-\noindent
 Nathan W. Anderson and Heath Blackmon
+\end{center}
 
 \noindent
 Department of Biology; Texas A\&M University; College Station, TX 77843, USA
 
-\vfill
+\noindent
+Author for correspondence: HB, \textit{coleoguy@gmail.com}
+
+
 
 
 %--------------------------------------------------
 % Abstract, Keywords
 %--------------------------------------------------
 
-\noindent
-Author for correspondence: HB, \textit{coleoguy@gmail.com}
-\vfill
 
-\clearpage
 
 \section{Abstract}
 
-Chromosome fusion and fission are two important mechanisms in karyotype evolution. 
-In particular, the fusion of a sex chromosome and an autosome has been proposed to be a mechanism of resolving sexual antagonism.
+Chromosome fusion and fission are primary mechanisms of karyotype evolution. 
+In particular, the fusion of a sex chromosome and an autosome has been proposed as a mechanism to resolve intralocus sexual antagonism.
 If sexual antagonism is common throughout the genome, we should expect to see an excess of fusions that join sex chromosomes and autosomes.
-Here, we present a null model that provides the probability of a sex chromosome autosome fusion, assuming all chromosomes have equal probability to be involved in a fusion.
-This closed form expression is applicable to both male and female heterogametic sex chromosome systems and can accommodate unequal proportion of fusions originating in males and females.
+Here, we present a null model that provides the probability of a sex chromosome autosome fusion, assuming all chromosomes have an equal probability of being involved in a fusion.
+This closed-form expression is applicable to both male and female heterogametic sex chromosome systems and can accommodate unequal proportions of fusions originating in males and females.
 
 
 \bigskip
@@ -55,6 +48,7 @@ This closed form expression is applicable to both male and female heterogametic 
 \textit{Keywords: sexual antagonism; chromosome fusion; sex determination systems; chromosome number}
 
 
+\clearpage
 
 
 %--------------------------------------------------
@@ -70,11 +64,12 @@ The fusion and fission of chromosomes are two of the primary mechanisms that res
 Early on, it was recognized that both fusions and fissions might be selectively favoured because they modify linkage among loci \citep{white1977,stebbins1971}.
 In particular, the fusion of a sex chromosome and an autosome (SA-fusion) has been proposed to resolve sexual antagonism. Therefore, these fusions are predicted to be more common than autosome autosome fusions (AA-fusions) \citep{charlesworth1980}.
 Limited empirical examples have shown instances where autosomes, which are enriched for sexual antagonistic loci, have recently fused with sex chromosomes \citep{zhou2012}.
-For instance, a recent fusion between the X chromosome and an autosome in \textit{Drosophila americana} is proported to have been driven by selection to reduce recombination between the sex determining loci and sexually antagonistic loci located on the autosome \citep{mcallister2003}.
+For instance, a recent fusion between the X chromosome and an autosome in \textit{Drosophila americana} is proported to have been driven by selection to reduce recombination between the sex determining locus and sexually antagonistic locus located on the autosome \citep{mcallister2003}.
 Additionally, an apparent surplus in X chromosome autosome fusions in jumping spiders, \textit{Habronattus}, is hypothesized to result from a mechanism of isolating male-beneficial sexually antagonistic alleles on the neo-Y chromosome \citep{maddison2013}.
 Further empirical studies suggest that sexual antagonism may be common throughout the genome \citep{innocenti2010sexually,cheng2016sex}.
 However, there remains significant debate on the ubiquity of sexually antagonistic variation \citep{kasimatis2019limits,ponnikas2018sex}.
-A strong measure of the frequency of significant sexually antagonistic variation across the genome is an excess of SA-fusions relative to AA-fusions across large clades.
+A strong measure of the frequency of significant sexually antagonistic variation across the genome would be an excess of SA-fusions relative to AA-fusions across large clades.
+We derive equations describing the probability of each type of fusion necessary to perform such a test.
 
 %--------------------------------------------------
 % Model
@@ -93,7 +88,7 @@ When any two chromosomes fuse, there are 3 possibilities.
 The two chromosomes could both be autosomes (AA-fusion), they could both be sex chromosomes (SS-fusion), or one could be a sex chromosome and the other an autosome (SA-fusion). 
 We will denote our three possibilities as events $AA$, $SS$, and $SA$, respectively. 
 Given that a fusion has occurred, we are interested in the probability it is a SA-fusion.
-Or, equivalently, we are interested in the proportion of all fusions which are SA-fusions. 
+Or, equivalently, we are interested in the expected proportion of all fusions which are SA-fusions. 
 Unfortunately, this proves difficult to calculate directly. We can avoid this using the complement rule. 
 We define the probability that any given fusion is a SA-fusion as:
 
@@ -130,10 +125,10 @@ The lack of a homolog in males causes males and females to have different diploi
 
 We begin with females; following the same logic as above, we calculate the probability that an autosome is 'chosen' as the ratio of the number of autosomes to the total number of chromosomes present in females.
 $P(A_1) = \frac{D_a}{D_d}$, where $D_d$ is the diploid number in dams. 
-We use a subscript $s$ or $d$ for sire and dam when referring to sex specific values to avoid any confusion stemming from using subscript $m$ and $f$.
+We use a subscript $s$ and $d$ for sire and dam when referring to sex specific values to avoid any confusion stemming from using subscript $m$ and $f$.
 The probability that the second chromosome involved in the fusion is also an autosome can be found as the ratio of the number of autosomes available to be 'chosen', $D_a - 2$, and the total number of chromosomes available, $D_d - 2$. 
 $P(A_2) = \frac{D_a - 2}{D_d - 2}$. 
-After employing independence and equation \ref{eq1}, we find a very familiar equation for the probability of a SA-fusion in females, $P(SA_d)$, yielding. 
+After employing independence and equation \ref{eq1}, we find a very familiar equation for the probability of a SA-fusion in females, $P(SA_d)$. 
 
 \begin{equation} \label{eq3}
     P(SA_d) =  1 - \frac{D_a}{D_d} \cdot \frac{D_a - 2}{D_d - 2}
@@ -164,7 +159,7 @@ For example, in an XXY system females have four X chromosomes (two homologous pa
 So, in order to modify equation \ref{eq5} for an XXY system, we need only find an expression for the probability of a SS-fusion in both males and females. 
 In an XXY system, females and males have different diploid numbers, so we, again, consider the male and female cases separately. 
 
-Females in an XXY system will have four X chromosomes, two homologous pairs, and $D_a$ autosomes. 
+Females in an XXY system will have four X chromosomes, two pairs of homologs, and $D_a$ autosomes. 
 We calculate the probability of a SS-fusion as the product of the probability of a sex chromosome being 'chosen' to fuse first, $P(S_1)$, and the probability of a sex chromosome being 'chosen' to fuse second, $P(S_2)$. 
 Proceeding by counting, we calculate the probability that a sex chromosome is 'chosen' first,
 $P(S_1) = \frac{2X_s}{D_d} $, where $X_s$ is the number of X chromosomes present in sires. 
@@ -172,7 +167,7 @@ The use of $2X_s$ in females takes advantage of the fact females always have twi
 The probability that the second chromosome involved in the fusion is also a sex chromosome can be found in the same manner. 
 The number of sex chromosomes available to be 'chosen' is $2X_s - 2 $, and the total number of chromosomes available is $D_d - 2$. 
 It follows $P(S_2) = \frac{2X_s-2}{D_d-2}$. 
-We find the probability of a SS-fusion in females is  $P(SS_d) = \frac{2X_a}{D_d} \cdot \frac{2X_s-2}{D_d-2}$.
+We find the probability of a SS-fusion in females is  $P(SS_d) = \frac{2X_s}{D_d} \cdot \frac{2X_s-2}{D_d-2}$.
 Appending this result to equation \ref{eq3}, we find the probability of a SA-fusion in females:
 
     \begin{equation} \label{eq6}
@@ -200,7 +195,7 @@ P(SA_{XXY, XY, XO}) = 1 -\frac{D_a(D_a-2) + 2X_s(2X_s-2)}{2D_d(D_d-2)} - \frac{D
 
 \subsection{XYY System}
 In an XYY system, males have a single X chromosome and two non-homologous Y chromosomes, while females have a single pair of homologous X chromosomes.
-In females the only sex chromosomes are an X and its homolog and there is no possibility of a SS-fusion.
+The only sex chromosomes in females are an X and its homolog and there is no possibility of a SS-fusion.
 Recall in equation \ref{eq6}, the probability of both chromosomes in a fusion being sex chromosomes in a female is captured by the expression $P(SS_d) = \frac{2X_s}{D_d} \cdot \frac{2X_s-2}{D_d-2}$. In an XYY system, $X_s=2$ and $P(SS_d) = 0$. 
 Therefore, equation \ref{eq6} is appropriate for females in an XYY systems as well.
 However, in males a SS-fusion between the two Y chromosomes is possible.
@@ -221,7 +216,6 @@ To generate an expression that is applicable to both XXY and XYY systems we take
     \end{equation}
 
 This formulation is applicable to XO, XY and multi-XY sex chromosome systems.
-The current formulation will not apply in the rare case where there are multiple of both the X and the Y chromosome.
 It is quite possible that the sexes may make unequal contributions to the fusions entering a species \citep{pennell2015}.
 In this case, equation \ref{eq10} can be modified by the addition of a term $\mu_d$, representing the proportion of fusions that occur in females:
 
@@ -240,17 +234,12 @@ As a corollary, we are also able to derive general expressions for $P(SS)$ and $
     P(AA) = \mu_d\frac{D_a(D_a-2)}{D_d(D_d-2)} + (1-\mu_d)\frac{D_a(D_a-2)}{D_s(D_s-2)}
 \end{equation}
 
-\begin{wrapfigure}{r}{0.5\textwidth} 
-\includegraphics[width=0.45\textwidth]{autosome.num.pdf}
-\centering
-\caption{Probability of a random fusion joining a sex chromosome and autosome. On the vertical axis we plot the proportion of all fusions that are SA-fusions while on the horizontal axis we plot the diploid autosome count. Each sex chromosome system is indicated by a unique color.}
-\label{autosomenum}
-\end{wrapfigure}
-
 Equations \ref{eq11}-\ref{eq13} have six parameters: $\mu_d$, $X_s$, $D_a$, $Y$, $D_d$ and $D_s$. Recall, that we had eliminated one parameter, $X_d$, by noting $X_d = 2 X_s$. We can eliminate two more variables by substituting $D_d = 2X_s + D_a$ and $D_s = X_s + Y + D_a$.
 Although illustrated for male heterogametic systems, these formulations can be converted for use in ZW sex chromosome systems as well.
 Taking equations \ref{eq11} - \ref{eq13} and exchanging $D_d$ and $D_s$, replacing $X_s$ with $Z_d$,replacing $Y$ with $W$, and replacing $\mu_d$ with $\mu_s$, generates equations that will provide probabilities for ZO, ZW, and multi-ZW systems.
 We have provided equation \ref{eq11}, \ref{eq12} and \ref{eq13}, and their ZW equivalents, as R functions in \textit{supplemental file 1}.
+
+
 \section{Results and Discussion}
 %--------------------------------------------------
 % Results and Discussion
@@ -259,34 +248,28 @@ We have provided equation \ref{eq11}, \ref{eq12} and \ref{eq13}, and their ZW eq
 There are several cases where the derived equation,$P(SA)$, will fail.
 First, in systems with UV sex chromosomes. 
 In these systems, it is the gametophyte stage that occurs as separate males (carrying a V chromosome) and females (carrying a U chromosome) \citep{bachtrog2014sex}.
-Second, in systems with multiple X and multiple Y chromosomes (e.g. the platypus carries 5 X and 5 Y chromosomes) our formulation will fail to provide accurate probabilities.
+Second, in systems with multiple X and multiple Y chromosomes (e.g. the platypus carries 5 X and 5 Y chromosomes) our formulation will fail to provide accurate probabilities \citep{hsu2013}.
 However, these systems are exceedingly rare across the tree of life.
 Among 14,147 surveyed invertebrates just 0.4\% possess these systems, and the vast majority of these (52 species) are all termites in the order Blattodea \citep{blackmon2017}. 
 These sex chromosome systems are equally rare in mammals where they are restricted to two species in Monotremata \citep{ashman2014tree}.
-
-\begin{wrapfigure}{}{0.7\textwidth} 
-\includegraphics[width=0.65\textwidth]{approach.pdf}
-\centering
-\caption{Estimating $P(SA)$ across a clade. On the left a stochastic map showing chromosome number and sex chromosome system. In the table on the right we have calculated the proportion of time that each state is present in the clade and then calculated $P(SA)$ for each of these states. These $P(SA)$ values along with the proportions are used to generate the expected $P(SA)$ for the clade as a whole.}
-\label{approach}
-\end{wrapfigure}
 
 The need for a quantitative null model of the probability of SA-fusions is illustrated by examining the expected probability of SA-fusions across a range of observed chromosome numbers and sex chromosome systems.
 In figure \ref{autosomenum}, we show when the autosome number is small, a large proportion of fusions are expected to be SA-fusions even under a null model which assumes they are not selectively favored. 
 In fact, for the XY sex chromosome system the probability of a random fusion being an SA-fusion does not drop below 25\% until the diploid autosome count is greater than 16. 
 In systems with XXY sex chromosomes, the case is even more extreme. The probability of SA-fusion does not drop below 25\% until the diploid autosome count is greater than 22.
 Therefore, evaluating the proportion of SA-fusions and determining whether there is evidence for positive selection on these fusions can only be accomplished in light of a quantitative null model which accounts for chromosome number and sex chromosome system.
-
 In a recent study of jumping spiders, \textit{Habronattus}, the large disparity between the number of SA-fusions (8-15) and AA-fusion (1) and SS-fusions (1) all in a system with 26 autosomes is presented as evidence that SA-fusions are being favored \citep{maddison2013}. 
 The intuition that this pattern is unlikely can be rigorously tested with our null model.
-Using our equations \ref{eq11}-\ref{eq13}, and a multinomial distribution, we are able to calculate the exact empirical p-value of having observed eight or more SA-fusions out of a total of 10 fusions. 
+Using our equations \ref{eq11}-\ref{eq13}, and a multinomial distribution, we are able to calculate the exact empirical p-value of having observed eight or more SA-fusions out of a total of 10 fusions.
+For the purposes of this example we assume an XXO sex chromosome system and a diploid autosome count of 26 (this karyotype was the most common in the ancestral state estimation performed in the study).
 $P(8 \mbox{ or more SA-fusions out of } 10)= 
-\sum\limits_{i=8}^{10} \sum\limits_{j=0}^{10-i} \frac{10!}{i! \cdot j! \cdot (10-i-j)!} P(SA)^i \cdot P(AA)^j \cdot P(SS)^{10-i-j} = 0.00018$. 
+\sum\limits_{i=8}^{10} \sum\limits_{j=0}^{10-i} \frac{10!}{i! \cdot j! \cdot (10-i-j)!} P(SA)^i \cdot P(AA)^j \cdot P(SS)^{10-i-j} < 0.00001$. 
+This confirms that \textit{Habronattus} spiders do in fact have an excess of SA-fusions.
 
-One of the challenges to understanding whether there is an excess of SA-fusions is the relative rarity of these large scale genome rearrangements. 
-Research often involves disparate species with a range of sex chromosome systems and genome structures.
+In the previous example, we calculated the expected proportion of types of fusions based on the ancestral, and most common, karyotype inferred for a clade.
+However across the entire clade, a variety of karyotypes exist.
 We envision using equation \ref{eq11} to calculate the expected proportion of all fusions that are SA-fusions across large clades.
-We can do this by employing a biologically realistic model of possible fusions and fissions \citep{blackmon2019}, and leveraging stochastic mappings generated under such a model to extract the proportion of time that lineages in a clade spent with each possible chromosome number and sex chromosome system \citep{huelsenbeck2003, revell2012}.
+We can do this by employing a biologically realistic Markov model of possible fusions and fissions \citep{blackmon2019}, and leveraging stochastic mappings generated under such a model to extract the proportion of time that lineages in a clade spent with each possible chromosome number and sex chromosome system \citep{huelsenbeck2003, revell2012}.
 These proportions can then be used in conjunction with equation \ref{eq11} to generate a weighted sum that describes the expected proportion of all observed fusions that are SA-fusions (figure \ref{approach}).
 The resulting expected value can then be compared to the observed proportion of SA-fusions inferred from the stochastic mappings.
 An additional advantage of this approach is that it naturally extends to marginalize over a collection of phylogenetic trees sampled from a posterior distribution.
@@ -297,6 +280,23 @@ In some clades where chromosome number is high (e.g. Lepidoptera and Isoptera) o
 In these cases, several SA-fusions within a clade may well suggest that these fusions are selectively favored. 
 However, this model also shows that for clades with very few chromosomes (e.g. Diptera and Hemiptera), we should expect many SA-fusions even if they are not selectively favored \citep{blackmon2017}.
 Therefore, SA-fusions should only be considered as evidence for sexual antagonism when they occur at a higher rate than expected for the chromosome numbers and sex chromosome systems that have been present during the evolution of a clade.
+
+\clearpage
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{autosome.num.pdf}
+\caption{Probability of a random fusion joining a sex chromosome and autosome. On the vertical axis we plot the proportion of all fusions that are SA-fusions while on the horizontal axis we plot the diploid autosome count. Each sex chromosome system is indicated by a unique color.}
+\label{autosomenum}
+\end{figure}
+
+
+\begin{figure} 
+\includegraphics[width=0.65\textwidth]{approach.pdf}
+\caption{Estimating $P(SA)$ across a clade. On the left a stochastic map showing chromosome number and sex chromosome system. In the table on the right we have calculated the proportion of time that each state is present in the clade and then calculated $P(SA)$ for each of these states. These $P(SA)$ values along with the proportions are used to generate the expected $P(SA)$ for the clade as a whole.}
+\label{approach}
+\end{figure}
+
+
 
 
 %--------------------------------------------------
