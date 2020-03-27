@@ -245,7 +245,7 @@ We have provided equation \ref{eq11}, \ref{eq12} and \ref{eq13}, and their ZW eq
 % Results and Discussion
 %--------------------------------------------------
 
-There are several cases where the derived equation,$P(SA)$, will fail.
+There are several cases where the derived equation, $P(SA)$, will fail.
 First, in systems with UV sex chromosomes. 
 In these systems, it is the gametophyte stage that occurs as separate males (carrying a V chromosome) and females (carrying a U chromosome) \citep{bachtrog2014sex}.
 Second, in systems with multiple X and multiple Y chromosomes (e.g. the platypus carries 5 X and 5 Y chromosomes) our formulation will fail to provide accurate probabilities \citep{hsu2013}.
@@ -255,18 +255,18 @@ These sex chromosome systems are equally rare in mammals where they are restrict
 
 The need for a quantitative null model of the probability of SA-fusions is illustrated by examining the expected probability of SA-fusions across a range of observed chromosome numbers and sex chromosome systems.
 In figure \ref{autosomenum}, we show when the autosome number is small, a large proportion of fusions are expected to be SA-fusions even under a null model which assumes they are not selectively favored. 
-In fact, for the XY sex chromosome system the probability of a random fusion being an SA-fusion does not drop below 25\% until the diploid autosome count is greater than 16. 
+In fact, for the XY sex chromosome system the probability of a given fusion being an SA-fusion does not drop below 25\% until the diploid autosome count is greater than 16. 
 In systems with XXY sex chromosomes, the case is even more extreme. The probability of SA-fusion does not drop below 25\% until the diploid autosome count is greater than 22.
 Therefore, evaluating the proportion of SA-fusions and determining whether there is evidence for positive selection on these fusions can only be accomplished in light of a quantitative null model which accounts for chromosome number and sex chromosome system.
 In a recent study of jumping spiders, \textit{Habronattus}, the large disparity between the number of SA-fusions (8-15) and AA-fusion (1) and SS-fusions (1) all in a system with 26 autosomes is presented as evidence that SA-fusions are being favored \citep{maddison2013}. 
 The intuition that this pattern is unlikely can be rigorously tested with our null model.
 Using our equations \ref{eq11}-\ref{eq13}, and a multinomial distribution, we are able to calculate the exact empirical p-value of having observed eight or more SA-fusions out of a total of 10 fusions.
-For the purposes of this example we assume an XXO sex chromosome system and a diploid autosome count of 26 (this karyotype was the most common in the ancestral state estimation performed in the study).
+We assume an XXO sex chromosome system and a diploid autosome count of 26 (this karyotype was the most common in the ancestral state estimation performed in the study).
 $P(8 \mbox{ or more SA-fusions out of } 10)= 
 \sum\limits_{i=8}^{10} \sum\limits_{j=0}^{10-i} \frac{10!}{i! \cdot j! \cdot (10-i-j)!} P(SA)^i \cdot P(AA)^j \cdot P(SS)^{10-i-j} < 0.00001$. 
 This confirms that \textit{Habronattus} spiders do in fact have an excess of SA-fusions.
 
-In the previous example, we calculated the expected proportion of types of fusions based on the ancestral, and most common, karyotype inferred for a clade.
+In the previous example, we calculated the expected proportion of the different types of fusions based on the ancestral, and most common, karyotype inferred on a clade.
 However across the entire clade, a variety of karyotypes exist.
 We envision using equation \ref{eq11} to calculate the expected proportion of all fusions that are SA-fusions across large clades.
 We can do this by employing a biologically realistic Markov model of possible fusions and fissions \citep{blackmon2019}, and leveraging stochastic mappings generated under such a model to extract the proportion of time that lineages in a clade spent with each possible chromosome number and sex chromosome system \citep{huelsenbeck2003, revell2012}.
