@@ -266,13 +266,14 @@ $P(8 \mbox{ or more SA-fusions out of } 10)=
 \sum\limits_{i=8}^{10} \sum\limits_{j=0}^{10-i} \frac{10!}{i! \cdot j! \cdot (10-i-j)!} P(SA)^i \cdot P(AA)^j \cdot P(SS)^{10-i-j} < 0.00001$. 
 This confirms that \textit{Habronattus} spiders do in fact have an excess of SA-fusions.
 
-In the previous example, we calculated the expected proportion of the different types of fusions based on the ancestral, and most common, karyotype inferred on a clade.
+In the previous example, we calculated the expected proportion of the different types of fusions based on the ancestral, and most common, karyotype inferred in a clade.
 However across the entire clade, a variety of karyotypes exist.
-We envision using equation \ref{eq11} to calculate the expected proportion of all fusions that are SA-fusions across large clades.
+We envision the primary use of equation \ref{eq11} will be to calculate the expected proportion of fusions that are SA-fusions across large clades.
 We can do this by employing a biologically realistic Markov model of possible fusions and fissions \citep{blackmon2019}, and leveraging stochastic mappings generated under such a model to extract the proportion of time that lineages in a clade spent with each possible chromosome number and sex chromosome system \citep{huelsenbeck2003, revell2012}.
 These proportions can then be used in conjunction with equation \ref{eq11} to generate a weighted sum that describes the expected proportion of all observed fusions that are SA-fusions (figure \ref{approach}).
 The resulting expected value can then be compared to the observed proportion of SA-fusions inferred from the stochastic mappings.
 An additional advantage of this approach is that it naturally extends to marginalize over a collection of phylogenetic trees sampled from a posterior distribution.
+This approach would pro
 
 We have developed a flexible equation used to calculate the probability of SA-fusions under common sex chromosome systems (male or female heterogametic).
 This model will allow for quantitative analyses of fusions across large clades and provide a way to test the long-standing hypothesis that SA-fusions are selectively favored for their ability to resolve sexual antagonism.
