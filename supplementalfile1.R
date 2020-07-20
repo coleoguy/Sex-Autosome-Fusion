@@ -77,7 +77,9 @@ Pfss <- function(Da, scs, mud = 0.5){
   return(res)
 }
 
-
+Pfsa2 <- function (Da, Xs, Y, Dd, Da, mud = 0.5){
+  res
+}
 
 
 
@@ -94,3 +96,5 @@ for(i in 8:10){
 }
 p.val <- sum
 p.val
+
+
