@@ -40,8 +40,49 @@ Pfsa <- function(Da, scs, mud = 0.5){ #(Da, Xs, Y, Dd, Ds, mud = 0.5){
 
 
 # function for P(AA)
-pfaa <- function(Da, scs, mud = 0.5){
-  
+Pfaa <- function(Da, scs, mud = 0.5){
+  sexchroms <- strsplit(scs, split = "")[[1]]
+  if("X" %in% sexchroms){
+    Xs <- sum(sexchroms == "X")
+    Y <- sum(sexchroms == "Y")
+    Ds <- Da + Xs + Y
+    Dd <- Da + 2 * Xs
+    
+    res <- mud * ((Da * (Da - 2)) / (Dd * (Dd - 2))) + (1 - mud) * ((Da * (Da - 2))/(Ds * (Ds - 2)))
+  }else if("Z" %in% sexchroms){
+    Zd <- sum(sexchroms == "Z")
+    W <- sum(sexchroms == "W")
+    Dd <- Da + Zd + W
+    Ds <- Da + 2 * Zd
+    mus <- 1-mud
+    
+    res <- mus * ((Da * (Da - 2)) / (Ds * (Ds - 2))) + (1 - mus)((Da * (Da - 2))/(Dd * (Dd - 2)))
+  }
+  return(res)
+}
+
+# function for P(SS)
+Pfss <- function(Da, scs, mud = 0.5){
+  sexchroms <- strsplit(scs, split = "")[[1]]
+  if("X" %in% sexchroms){
+    Xs <- sum(sexchroms == "X")
+    Y <- sum(sexchroms == "Y")
+    Ds <- Da + Xs + Y
+    Dd <- Da + 2 * Xs
+    
+    res <- mud * ((4 * Xs * (Xs - 1)) / (Dd * (Dd - 2))) + 
+      (1 - mud) * (((Xs * (Xs - 1))/(Ds * (Da + Xs - 1))) + ((Y * (Y - 1))/(Ds * (Da + Y - 1))))
+  }else if("Z" %in% sexchroms){
+    Zd <- sum(sexchroms == "Z")
+    W <- sum(sexchroms == "W")
+    Dd <- Da + Zd + W
+    Ds <- Da + 2 * Zd
+    mus <- 1-mud
+    
+    res <- mud * ((4 * Zd * (Zd - 1)) / (Ds * (Ds - 2))) + 
+      (1 - mud) * (((Zd * (Zd - 1))/(Dd * (Da + Zd - 1))) + ((W * (W - 1))/(Dd * (Da + W - 1))))
+  }
+  return(res)
 }
 
 
