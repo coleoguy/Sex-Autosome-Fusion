@@ -77,7 +77,9 @@ for(i in 1:1000){
 
 
 plot(density(expSA, bw = .009),
-     xlim = c(.1, .5), main = "")
+     xlim = c(.1, .5), main = "",
+     xlab = "Proportion sex-autosome fusion",
+     cex.axis = .7, cex.lab = .7)
 polygon(density(expSA, bw = .009),
         col = rgb(1, 0, 0, .3))
 lines(density(obspropSA))
@@ -87,9 +89,8 @@ points(x = c(.1, .1),
        y = c(40, 35),
        pch = 15,
        col = c(rgb(1, 0, 0, .5),
-             rgb(0, 0, 1, .5)))
+               rgb(0, 0, 1, .5)))
 text(x = c(.1, .1),
      y = c(40, 35),
      labels = c("Expected", "Inferred"),
      pos = 4, cex = .6)
-
