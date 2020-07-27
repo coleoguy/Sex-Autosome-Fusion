@@ -1,13 +1,15 @@
-# This analysis test for an excess of
-# sex chromosome autosome fusions
-# in the genus drosophila
+# This analysis the proportion of fusions
+# that are sex chromosome autosome fusions
+# relative to all fusions
 
 library(ape)
 
 # read in the tree and data
 tree <- read.nexus("tree.nex")
-dat <- read.csv("drosdata.csv", as.is=T, header = T)[,1:4]
-colnames(dat) <- c("sp","hap","scs", "sim.state")
+dat <- read.csv("drosdata.csv",
+                as.is = T, header = T)[, 1:4]
+colnames(dat) <- c("sp", "hap",
+                   "scs", "sim.state")
 # trim the data and phylogeny to match
 dat <- dat[dat$sp %in% tree$tip.label, ]
 tree <- keep.tip(tree, dat$sp)
@@ -20,16 +22,16 @@ for(i in 1:nrow(dat)){
 }
 dat <- new.dat
 rm(new.dat)
-plot(tree, cex=.3)
-tiplabels(pch=16,cex=.4,col=c("red","blue")[as.factor(dat$scs)])
+plot(tree, cex = .3)
+tiplabels(pch = 16, cex = .4,
+          col = c("red", "blue")[as.factor(dat$scs)])
 
 library(phytools)
 # lets read in the transition matrix
 # that describes our model of karyotype
 # evolution
-mat <- as.matrix(read.csv("transition.matrix.csv",header=F))
-# not allowing for NeoXY->XY
-# mat[mat==4]<-0
+mat <- as.matrix(read.csv("transition.matrix.csv",
+                          header = F))
 x <- matrix(0,  nrow=nrow(dat), 8)
 rownames(x) <- dat$sp
 for(i in 1:nrow(x)){
@@ -37,15 +39,13 @@ for(i in 1:nrow(x)){
 }
 colnames(x) <- 1:8
 hists <- make.simmap(tree,
-                     x=x,
-                     model=mat,
-                     pi=c(0,0,0,1,0,0,0,0),
-                     nsim=1000)
+                     x = x,
+                     model = mat,
+                     pi = c(0, 0, 0, 1, 0, 0, 0, 0),
+                     nsim = 1000)
 counts <- describe.simmap(hists)$count
-#colnames(counts)[c(8,15,22,36,43)]
-colnames(counts)[c(9,17,25,33,41,49,57)]
-#AAfusioncounts <- rowSums(counts[, c(8,15,22,36,43)])
-AAfusioncounts <- rowSums(counts[, c(9,17,25,33,41,49,57)])
+colnames(counts)[c(9, 17, 25, 33, 41, 49, 57)]
+AAfusioncounts <- rowSums(counts[, c(9, 17, 25, 33, 41, 49, 57)])
 colnames(counts)[c(12, 20, 28)]
 ASfusioncounts <- rowSums(counts[,c(12, 20, 28)])
 obspropSA <- ASfusioncounts/AAfusioncounts
@@ -63,7 +63,7 @@ library(evobiR)
 #    8            10
 expSA <- c()
 for(i in 1:1000){
-  times <- describe.simmap(hists[[i]])$times[2,]
+  times <- describe.simmap(hists[[i]])$times[2, ]
   sa4 <- Pfsa(Da = 4, scs = "XY")
   sa6 <- Pfsa(Da = 6, scs = "XY")
   sa8 <- Pfsa(Da = 8, scs = "XY")
@@ -73,8 +73,6 @@ for(i in 1:1000){
                   sa8 * times[c(3, 7)],
                   sa10 * times[c(4, 8)])
 }
-
-
 
 plot(density(expSA, bw = .009),
      xlim = c(.1, .5), main = "",
@@ -94,3 +92,12 @@ text(x = c(.1, .1),
      y = c(40, 35),
      labels = c("Expected", "Inferred"),
      pos = 4, cex = .6)
+
+
+
+mean(obspropSA)
+library(coda)
+HPDinterval(as.mcmc(obspropSA))
+HPDinterval(as.mcmc(expSA))
+
+
