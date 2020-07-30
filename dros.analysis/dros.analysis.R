@@ -43,6 +43,7 @@ hists <- make.simmap(tree,
                      model = mat,
                      pi = c(0, 0, 0, 1, 0, 0, 0, 0),
                      nsim = 1000)
+plotSimmap(hists)
 counts <- describe.simmap(hists)$count
 colnames(counts)[c(9, 17, 25, 33, 41, 49, 57)]
 AAfusioncounts <- rowSums(counts[, c(9, 17, 25, 33, 41, 49, 57)])
